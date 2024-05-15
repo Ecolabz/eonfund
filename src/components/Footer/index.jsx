@@ -1,17 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./footer.css";
 import { BsArrowRight } from "react-icons/bs";
 import { MdOutlineArrowForward } from "react-icons/md";
 import FooterLogo from "../../assets/svgs/footer-logo.svg";
 import { useLenis } from "@studio-freight/react-lenis";
 import { FaXTwitter } from "react-icons/fa6";
+import axios from "axios";
 const Footer = () => {
+  const secretKey = "a0d59f43aeaaeac6e7683403a9955183";
+  const publicKey = "6d90c12c6b1775632442321fc5e29029";
+  const [sending, setSending] = useState(false);
+  const [email, setEmail] = useState("");
   const lenis = useLenis(({ scroll }) => {});
   const footerLink = [
     { href: "#", label: "About" },
     { href: "#portfolio", label: "Portfolio" },
     { href: "https://eonfund.medium.com", label: "Blog" },
   ];
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    setSending(true);
+    e.preventDefault();
+    const data = {
+      Messages: [
+        {
+          From: {
+            Email: email,
+            // Name: "Dozie",
+          },
+          To: [
+            {
+              Email: "eonbrands1@gmail.com",
+            },
+          ],
+          Subject: `${email} subscribed to Eonfund`,
+          TextPart: `${email} joined Eonfund fans`,
+        },
+      ],
+    };
+    axios
+      .post("https://api.mailjet.com/v3.1/send", data, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${publicKey}:${secretKey}`,
+        },
+      })
+      .then((response) => {
+        console.log("Email sent:", response.data);
+        setSending(false);
+        alert("Email sent");
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setSending(false);
+        alert("Email not sent");
+      });
+  };
   return (
     <section className="app-footer">
       <div className="container">
@@ -26,9 +72,16 @@ const Footer = () => {
             </p>
 
             <div className="flex form-wrap">
-              <form className="input-wrap">
-                <input type="email" placeholder="Enter email address" />
-                <button type="submit" className="flex">
+              <form onSubmit={handleSubmit} className="input-wrap">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={handleChange}
+                  placeholder="Enter email address"
+                  required
+                  disabled={sending}
+                />
+                <button type="submit" disabled={sending} className="flex">
                   <BsArrowRight />
                 </button>
               </form>
