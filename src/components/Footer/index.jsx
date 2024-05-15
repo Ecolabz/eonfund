@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./footer.css";
+import "react-toastify/dist/ReactToastify.css";
 import { BsArrowRight } from "react-icons/bs";
 import { MdOutlineArrowForward } from "react-icons/md";
 import FooterLogo from "../../assets/svgs/footer-logo.svg";
 import { useLenis } from "@studio-freight/react-lenis";
 import { FaXTwitter } from "react-icons/fa6";
 import axios from "axios";
+import { Slide, toast } from "react-toastify";
 const Footer = () => {
-  const secretKey = "a0d59f43aeaaeac6e7683403a9955183";
-  const publicKey = "6d90c12c6b1775632442321fc5e29029";
   const [sending, setSending] = useState(false);
   const [email, setEmail] = useState("");
   const lenis = useLenis(({ scroll }) => {});
@@ -20,44 +20,46 @@ const Footer = () => {
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     setSending(true);
     e.preventDefault();
-    const data = {
-      Messages: [
-        {
-          From: {
-            Email: email,
-            // Name: "Dozie",
-          },
-          To: [
-            {
-              Email: "eonbrands1@gmail.com",
-            },
-          ],
-          Subject: `${email} subscribed to Eonfund`,
-          TextPart: `${email} joined Eonfund fans`,
-        },
-      ],
-    };
-    axios
-      .post("https://api.mailjet.com/v3.1/send", data, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${publicKey}:${secretKey}`,
-        },
-      })
-      .then((response) => {
-        console.log("Email sent:", response.data);
-        setSending(false);
-        alert("Email sent");
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        setSending(false);
-        alert("Email not sent");
+
+    try {
+      await axios.post("https://eonfund-backend.onrender.com/subscribe", {
+        email,
       });
+      sucessfulAlert();
+      setSending(false);
+      setEmail("");
+    } catch (error) {
+      errorAlert(error);
+      setSending(false);
+    }
   };
+  const sucessfulAlert = () =>
+    toast.success("You're now part of our community.", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Slide,
+    });
+  const errorAlert = (err) =>
+    toast.error(err, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Slide,
+    });
   return (
     <section className="app-footer">
       <div className="container">
@@ -82,7 +84,7 @@ const Footer = () => {
                   disabled={sending}
                 />
                 <button type="submit" disabled={sending} className="flex">
-                  <BsArrowRight />
+                  {sending ? <div className="loader"></div> : <BsArrowRight />}
                 </button>
               </form>
               <div className="vertical" />

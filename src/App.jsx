@@ -1,6 +1,7 @@
 import "./App.css";
 import { About, Footer, Hero, Portfolio } from "./components";
 import { ReactLenis } from "@studio-freight/react-lenis";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <About />
         <Portfolio />
         <Footer />
+        <ToastContainer />
       </main>
     </ReactLenis>
   );
