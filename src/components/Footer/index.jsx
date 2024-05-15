@@ -91,6 +91,7 @@ const Footer = () => {
               <a
                 href="https://twitter.com/eonfund"
                 target="_blank"
+                rel="noreferrer"
                 className="join-discord flex"
               >
                 <FaXTwitter />
@@ -114,6 +115,7 @@ const Footer = () => {
                   key={index}
                   className="footer-link"
                   target={footerLink.label === "Blog" && "_blank"}
+                  rel="noreferrer"
                 >
                   {footerLink.label}
                   <MdOutlineArrowForward />
@@ -135,6 +137,7 @@ const Footer = () => {
               href="https://docs.eonfund.vc/privacy-policy"
               target="_blank"
               className="policy"
+              rel="noreferrer"
             >
               Privacy policy
             </a>
@@ -142,6 +145,7 @@ const Footer = () => {
               href="https://docs.eonfund.vc/terms-and-conditions"
               target="_blank"
               className="terms"
+              rel="noreferrer"
             >
               Terms & Conditions
             </a>

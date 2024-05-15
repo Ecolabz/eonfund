@@ -23,6 +23,7 @@ const Navbar = () => {
           <a
             href="https://t.co/obRmbwRdhr"
             target="_blank"
+            rel="noreferrer"
             className="join-wrap"
           >
             <AnimatedButton>Apply for funding</AnimatedButton>

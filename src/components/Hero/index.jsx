@@ -59,6 +59,7 @@ const Hero = () => {
           <a
             href="https://t.co/obRmbwRdhr"
             target="_blank"
+            rel="noreferrer"
             className="apply-fund-btn"
           >
             <button

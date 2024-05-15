@@ -101,6 +101,7 @@ const NavMenu = ({ setActive }) => {
               initial="initial"
               animate="open"
               target={link.label === "Blog" && "_blank"}
+              rel="noreferrer"
               onClick={() => {
                 link.label !== "Blog" &&
                   lenis.scrollTo(link.link === "#" ? "unknown" : link.link);
