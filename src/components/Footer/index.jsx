@@ -25,7 +25,7 @@ const Footer = () => {
     e.preventDefault();
 
     try {
-      await axios.post("https://eonfund-backend.onrender.com/subscribe", {
+      await axios.post("https://eonfund-backend-1.onrender.com/subscribe", {
         email,
       });
       sucessfulAlert();
