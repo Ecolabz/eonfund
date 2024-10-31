@@ -25,13 +25,14 @@ const Footer = () => {
     e.preventDefault();
 
     try {
-      await axios.post("https://eonfund-backend-1.onrender.com/subscribe", {
+      await axios.post("https://eonfund-backend-1.onrender.com/api/subscribe", {
         email,
       });
       sucessfulAlert();
       setSending(false);
       setEmail("");
     } catch (error) {
+      console.log(error, "error");
       errorAlert(error);
       setSending(false);
     }
