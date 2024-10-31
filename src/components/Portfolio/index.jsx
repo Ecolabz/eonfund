@@ -2,10 +2,11 @@ import React from "react";
 import "./portfolio.css";
 import AnimatedButton from "../AnimatedButton";
 import Fraqvest from "../../assets/svgs/fraqvest.svg";
-import Oaksvale from "../../assets/svgs/oaksvale.svg";
+import Oaksvale from "../../assets/images/projectsnglogo.png";
 import Shazzy from "../../assets/svgs/shazzy.svg";
 import Gamebitty from "../../assets/svgs/gamebitty.svg";
-import Amapiano from "../../assets/svgs/amapiano.svg";
+import Amapiano from "../../assets/images/lepoledideslogo.png";
+
 const Portfolio = () => {
   const companies = [Fraqvest, Oaksvale, Shazzy, Gamebitty, Amapiano];
   return (
@@ -45,7 +46,7 @@ const Portfolio = () => {
                 {companies.map((logo, index) => (
                   <div key={index} className="company-grid-item">
                     <div className="grid-logo">
-                      <img src={logo} alt="company-logo" />
+                      <img src={logo} alt="company-logo" className="filter" />
                     </div>
                   </div>
                 ))}

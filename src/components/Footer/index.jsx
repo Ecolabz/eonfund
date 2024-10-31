@@ -89,7 +89,7 @@ const Footer = () => {
               </form>
               <div className="vertical" />
               <a
-                href="https://twitter.com/eonfund"
+                href="https://x.com/eonfund"
                 target="_blank"
                 rel="noreferrer"
                 className="join-discord flex"

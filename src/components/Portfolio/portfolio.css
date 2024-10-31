@@ -74,6 +74,9 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
+.company-grid-item:last-child .grid-logo {
+  opacity: 0.3;
+}
 .grid-logo {
   width: 153px;
   height: 35px;
@@ -84,12 +87,19 @@
 }
 .company-grid-item:hover .grid-logo {
   filter: invert(1);
+  opacity: 1;
 }
 .company-grid-item:last-child:hover .grid-logo {
   filter: brightness(5);
 }
+.company-grid-item:hover {
+  opacity: 1;
+}
 .invest-content {
   gap: 30px;
+}
+.filter {
+  filter: grayscale(1);
 }
 @media (max-width: 428px) {
   .app-portfolio {
