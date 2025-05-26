@@ -37,7 +37,7 @@ const Portfolio = () => {
               <h2 className="infos-title">
                 Investing in Ideas That Solve <span>Critical Problems</span>
               </h2>
-              <a href="" className="join-wrap">
+              <a href="/" className="join-wrap">
                 <AnimatedButton>See all companies</AnimatedButton>
               </a>
             </div>

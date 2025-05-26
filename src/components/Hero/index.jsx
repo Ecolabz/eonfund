@@ -87,7 +87,7 @@ const Hero = () => {
         href="#investment"
         onClick={() => lenis.scrollTo("#investment")}
         id="scroll-btn"
-      ></a>
+      > </a>
       <div className="building" />
       <div className="hero-title">
         <h2 className="h2">Fueling</h2>

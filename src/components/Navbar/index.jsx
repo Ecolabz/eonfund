@@ -13,7 +13,7 @@ const Navbar = () => {
     <header className="app-header">
       <nav className="container flex">
         <span className="eon-logo-wrap">
-          <a href="#">
+          <a href="/">
             <div className="eon-logo">
               <img src={EON} alt="eon-lgo" />
             </div>
