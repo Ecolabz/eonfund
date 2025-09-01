@@ -8,7 +8,7 @@ import Gamebitty from "../../assets/svgs/gamebitty.svg";
 import Amapiano from "../../assets/images/lepoledideslogo.png";
 
 const Portfolio = () => {
-  const companies = [Fraqvest, Oaksvale, Shazzy, Gamebitty, Amapiano];
+  const companies = [Fraqvest, Oaksvale, Shazzy, Amapiano];
   return (
     <section className="app-portfolio">
       <div className="container">
@@ -35,7 +35,7 @@ const Portfolio = () => {
                 <span>Our investment portfolio</span>
               </p>
               <h2 className="infos-title">
-                Investing in Ideas That Solve <span>Critical Problems</span>
+              Startups we have <span>Invested</span> in
               </h2>
               <a href="/" className="join-wrap">
                 <AnimatedButton>See all companies</AnimatedButton>

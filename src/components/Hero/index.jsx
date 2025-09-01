@@ -52,8 +52,7 @@ const Hero = () => {
         <div className="flex hero-info">
           <p className="hero-desc">
             <span>
-              Eonfund ignites African startups with $10k-$100k investments,
-              fostering tech pioneers poised to build lasting businesses.
+            Investing in bold ideas shaping Africa’s tomorrow.
             </span>
           </p>
           <a
@@ -91,7 +90,7 @@ const Hero = () => {
       <div className="building" />
       <div className="hero-title">
         <h2 className="h2">Fueling</h2>
-        <h2 className="h2">Innovation</h2>
+        <h2 className="h2">Afro Innovation</h2>
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ const About = () => {
           <span>What are we looking for</span>
         </p>
         <h2 className="section-desc">
-          <span>Identifying Technical Founders with Transformative Ideas</span>
+          <span>Identifying & backing Technical Founders with Transformative Ideas</span>
         </h2>
       </div>
       <div className="grid">

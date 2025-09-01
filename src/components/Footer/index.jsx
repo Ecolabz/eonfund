@@ -132,7 +132,7 @@ const Footer = () => {
         </div>
         <div className="footer-divider" />
         <div className="bottom flex">
-          <p className="copyright">©2024 Eonfund. All Right Reserved </p>
+          <p className="copyright">©2025 Eonfund. All Right Reserved </p>
           <div className="flex regulation">
             <a
               href="https://docs.eonfund.vc/privacy-policy"
