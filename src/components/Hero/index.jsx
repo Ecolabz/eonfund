@@ -47,7 +47,7 @@ const Hero = () => {
       <Navbar />
       <div className="container hero-content">
         <h2>
-          Fueling <br /> Innovation
+          Fueling <br /> Afro Innovation
         </h2>
         <div className="flex hero-info">
           <p className="hero-desc">
