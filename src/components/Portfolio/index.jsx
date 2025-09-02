@@ -2,13 +2,11 @@ import React from "react";
 import "./portfolio.css";
 import AnimatedButton from "../AnimatedButton";
 import Fraqvest from "../../assets/svgs/fraqvest.svg";
-import Oaksvale from "../../assets/images/projectsnglogo.png";
 import Shazzy from "../../assets/svgs/shazzy.svg";
 import Gamebitty from "../../assets/svgs/gamebitty.svg";
-import Amapiano from "../../assets/images/lepoledideslogo.png";
 
 const Portfolio = () => {
-  const companies = [Fraqvest, Oaksvale, Shazzy, Amapiano];
+  const companies = [Fraqvest, Shazzy, Gamebitty];
   return (
     <section className="app-portfolio">
       <div className="container">
@@ -35,7 +33,7 @@ const Portfolio = () => {
                 <span>Our investment portfolio</span>
               </p>
               <h2 className="infos-title">
-              Startups we have <span>Invested</span> in
+                Startups we have <span>Invested</span> in
               </h2>
               <a href="/" className="join-wrap">
                 <AnimatedButton>See all companies</AnimatedButton>
